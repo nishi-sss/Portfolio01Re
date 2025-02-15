@@ -1,0 +1,17 @@
+# Python 関連（backend 用）
+venv/  
+__pycache__/  
+*.pyc  
+instance/  
+
+# Node.js & React 関連（frontend 用）
+node_modules/  
+build/  
+*.log  
+
+# 環境変数ファイル（セキュリティ対策）
+.env  
+
+# OSやエディタの一時ファイル
+Thumbs.db
+.vscode/
