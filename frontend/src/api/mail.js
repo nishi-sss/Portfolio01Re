@@ -8,7 +8,7 @@ export const handleSubmit = async (e) => {
       message: document.getElementById("message").value
     };
 
-    const response = await fetch("https://portfolio01-backend-a723a56386b4.herokuapp.com/", {
+    const response = await fetch("https://portfolio01-backend-a723a56386b4.herokuapp.com/send-mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
