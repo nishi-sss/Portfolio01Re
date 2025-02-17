@@ -1,12 +1,8 @@
-// frontend/src/api/mail.js
-export const handleSubmit = async (e) => {
-    e.preventDefault();
+export const handleSubmit = async (e, formData) => { // ✅ `formData` を受け取る！
+    e.preventDefault();  // ✅ `フォーム送信時のリロードを防ぐ！`
 
-    const formData = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    };
+    console.log("📩 フォーム送信ボタンが押された！");  // ✅ `デバッグログ`
+    console.log("📨 送信データ:", formData);  // ✅ `送信データの確認`
 
     const response = await fetch("https://portfolio01-backend-a723a56386b4.herokuapp.com/send-mail", {
       method: "POST",
@@ -17,9 +13,16 @@ export const handleSubmit = async (e) => {
     });
 
     if (response.ok) {
-      alert("メールが送信されました!！");
-      window.location.href = "/";  // ← `ホームに戻る`
+      console.log("✅ メール送信成功！🎉");
+      alert("メールが送信されました！ 🎉");
+
+      // ✅ `フォームの入力値をクリア`
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+
     } else {
+      console.log("❌ メール送信失敗！😢", response);
       alert("メール送信に失敗しました...");
     }
 };

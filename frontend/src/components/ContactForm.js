@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { handleSubmit } from '../api/mail';  // mail.js から関数をインポート！
+import { handleSubmit } from '../api/mail';  // mail.js の送信関数をインポート！
 
-function Form() {
+function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,17 +14,20 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit}> {/* mail.js の handleSubmit を使う！ */}
+    <form onSubmit={(e) => handleSubmit(e, formData)}> {/* ✅ `handleSubmit` に `formData` を渡す！ */}
       <label>Name:</label>
-      <input type="text" name="name" onChange={handleChange} required />
+      <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+      
       <label>Email:</label>
-      <input type="email" name="email" onChange={handleChange} required />
+      <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+      
       <label>Message:</label>
-      <textarea name="message" onChange={handleChange}></textarea>
+      <textarea name="message" value={formData.message} onChange={handleChange} required />
+
       <button type="submit">Submit</button>
     </form>
   );
 }
 
-export default Form;
+export default ContactForm;
 
