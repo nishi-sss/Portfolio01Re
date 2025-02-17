@@ -12,7 +12,7 @@ from .mail import mail_bp
 
 def create_app():
     app = Flask(__name__)
-    CORS(app)
+    CORS(app, resources={r"/*": {"origins": "*"}})
 
     mail = Mail(app)
 
