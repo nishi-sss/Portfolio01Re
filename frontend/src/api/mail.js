@@ -18,6 +18,7 @@ export const handleSubmit = async (e) => {
 
     if (response.ok) {
       alert("メールが送信されました!！");
+      window.location.href = "/";  // ← `ホームに戻る`
     } else {
       alert("メール送信に失敗しました...");
     }
