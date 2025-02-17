@@ -12,7 +12,7 @@ import TermsOfService from './pages/TermsOfService';
 
 function App() {
   return (
-    <Router> {/* ここを BrowserRouter → HashRouter に変更！ */}
+    <Router basename="/Portfolio01Re"> {/* ここ！ `basename` を追加！ */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
