@@ -16,11 +16,12 @@ const ContactContainer = styled.div`
 /* タイトルを左上に固定 */
 const Title = styled.h1`
   position: absolute;
-  top: 2%;
+  top: 1%;
   left: 5%;
-  font-size: 5.0rem;
+  font-size: 4.0rem;
   transform: rotate(3deg); /* やや右下がり */
   color: #C0C0C0;
+  opacity: 0.7;
   @media (max-width: 1024px){
     font-size:5.0rem;
     }
@@ -34,11 +35,11 @@ const Title = styled.h1`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 50vh; /* フォームの高さを広げる */
+  width: 35%;
+  height: 55vh; /* フォームの高さを広げる */
   align-self: flex-end;
   margin-right: 10%;
-  gap: 2.0rem;
+  gap: 3.0rem;
 
   @media (max-width: 1024px){
   margin-right: 10%;
