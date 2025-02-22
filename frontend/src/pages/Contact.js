@@ -13,45 +13,43 @@ const ContactContainer = styled.div`
   position: relative;
 `;
 
-/* タイトルを左上に固定 */
+/* タイトル */
 const Title = styled.h1`
   position: absolute;
-  top: 1%;
+  top: -10%;
   left: 5%;
-  font-size: 4.0rem;
-  transform: rotate(3deg); /* やや右下がり */
+  font-size: 3.0rem;
+  transform: rotate(3deg);
   color: #C0C0C0;
-  opacity: 0.7;
-  @media (max-width: 1024px){
-    font-size:5.0rem;
-    }
-@media (max-width: 768px){
-    font-size:1.5rem;   
-    }
-
+  opacity: 0.5;
+  @media (max-width: 1024px) {
+    font-size: 5.0rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
-/* フォーム全体を右寄せ＆縦長に */
+/* フォーム全体 */
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 35%;
-  height: 55vh; /* フォームの高さを広げる */
+  height: 55vh;
   align-self: flex-end;
   margin-right: 10%;
   gap: 3.0rem;
 
-  @media (max-width: 1024px){
-  margin-right: 10%;
-  width: 45%;  
-    }
-  @media (max-width: 768px){
-    margin-top:-40%;
+  @media (max-width: 1024px) {
+    margin-right: 10%;
+    width: 45%;
+  }
+  @media (max-width: 768px) {
+    margin-top: -40%;
     width: 80%;
     margin-right: 15%;
     gap: 1rem;
-    }
-
+  }
 `;
 
 /* 各入力欄 */
@@ -76,20 +74,15 @@ const Input = styled.input`
   }
 `;
 
-/* 必須マークを入力ボックスの右外に配置 */
 const RequiredLabel = styled.span`
   position: absolute;
-  right: -80px; /* 調整して位置を調整 */
+  right: -80px;
   color: #C0C0C0;
   font-size: 1.2rem;
-  @media (max-width: 1024px){
-    
-    }
-@media (max-width: 768px){
+  @media (max-width: 768px) {
     font-size: 0.8rem;
-    right:-60px;
-    }
-
+    right: -60px;
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -120,17 +113,9 @@ const SubmitButton = styled.button`
   &:hover {
     background: #bbb;
   }
-  
-  @media (max-width: 1024px){
-    
-    }
-@media (max-width: 768px){
-    
-    }
-
 `;
 
-/* チェックボックスの説明とリスト */
+/* チェックボックス */
 const CheckboxWrapper = styled.div`
   position: absolute;
   top: 30%;
@@ -138,16 +123,16 @@ const CheckboxWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-@media (max-width: 1024px){
-  width: 45%;
-  left: 1%;   
-    }
-@media (max-width: 768px){  
-position: absolute;
-width: 90%;
-margin-top: 85%;
-    }
 
+  @media (max-width: 1024px) {
+    width: 45%;
+    left: 1%;
+  }
+  @media (max-width: 768px) {  
+    position: absolute;
+    width: 90%;
+    margin-top: 85%;
+  }
 `;
 
 const CheckboxLabel = styled.p`
@@ -155,48 +140,47 @@ const CheckboxLabel = styled.p`
   margin-bottom: 0.5rem;
   color: #C0C0C0;
   opacity: 0.7;
-  @media (max-width: 1024px){
-    
-    }
-  @media (max-width: 768px){
-  position: absolute;
-  font-size:1.2rem;
-  margin-top: -20%;
-  left: 8%;
-    }
 
+  @media (max-width: 768px) {
+    position: absolute;
+    font-size: 1.2rem;
+    margin-top: -20%;
+    left: 8%;
+  }
 `;
 
-/* チェックボックスとラベルの配置 */
 const CheckboxContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  @media (max-width: 1024px){
-    
-    }
-@media (max-width: 768px){
-  position: absolute;
-  gap: 10px;
-    }
-
 `;
 
-/* チェックボックスのスタイル */
 const Checkbox = styled.input`
   width: 18px;
   height: 18px;
 `;
 
-/* "Gallery in the Forest" のフォントサイズ調整 */
 const CheckboxText = styled.label`
-  font-size: 1.3rem; /* ここでフォントサイズ調整！ */
+  font-size: 1.3rem;
   color: #C0C0C0;
+
+  @media (max-width: 768px) {
+    font-size: 1.0rem;
+  }
+`;
+
+/* メール機能が動作しないことを知らせる注意書き */
+const Notice = styled.p`
+  font-size: 1rem;
+  color: #ff5555; /* 目立つように赤 */
+  opacity: 0.8;
+  margin-top: 10px;
   @media (max-width: 1024px){
-    
+   font-size: 0.8 rem;    
     }
 @media (max-width: 768px){
-  font-size: 1.0rem;  
+    font-size: 0.9rem; 
+    width: 110%;
     }
 
 `;
@@ -204,7 +188,10 @@ const CheckboxText = styled.label`
 const Contact = () => {
   return (
     <ContactContainer>
-      <Title>Contact</Title>
+      <Title>
+            <p>Contact</p> 
+             <p>sample</p>
+      </Title>
 
       {/* チェックボックスの説明と選択肢 */}
       <CheckboxWrapper>
@@ -215,6 +202,13 @@ const Contact = () => {
             Gallery in the Forest - Enter the Silence
           </CheckboxText>
         </CheckboxContainer>
+
+        {/* ここに「このメール機能は機能していません。」の注意書きを追加 */}
+        <Notice>
+         <p> ※　このメール機能は現在動作していません。送信ボタンを押せますが,</p>
+         <p>一見送信できているように見えて実は送信できていません。</p>  
+         <p>直接メールはご遠慮ください。</p>
+        </Notice>
       </CheckboxWrapper>
 
       {/* フォーム */}
@@ -237,5 +231,4 @@ const Contact = () => {
 };
 
 export default Contact;
-
 
