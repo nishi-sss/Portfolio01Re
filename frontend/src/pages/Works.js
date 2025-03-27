@@ -122,22 +122,15 @@ const Server = styled(Title)`
     }
 
 `;
-const Gallery = styled(Title)`
+const Scrape = styled(Title)`
   margin-right: 10px;
   font-size: 4.0rem;
   transform: rotate(-10deg) translate(5px, 5px); /* ちょい右下に移動 */
   
  `;
-const In = styled(Title)`
+const Bomb= styled(Title)`
   margin-right: 0px;
   font-size: 3.0rem;
- `;
-const The = styled(Title)`
-  margin-right: 10px;
- `;
-const Forest = styled(Title)`
-  margin-right: 100px;
-  font-size:3.0rem;
  `;
 const Tapp = styled(Title)`
   margin-left: 20px;
@@ -256,7 +249,7 @@ const TechStack = styled.p`
 const Subtitle = styled.p`
   position: absolute;
   bottom: 6%;
-  right: 0;
+  right: 10%;
   color: #C0C0C0;
   font-size: 1.2rem;
   opacity: 0.5;
@@ -294,28 +287,25 @@ const Works = () => {
           googlespreadsheetで受け取ってFlaskで加工し、{"\n"}
           googlesheetに返却するシステムです。{"\n"}
         </Description>
-        <ImageSub src={`${S3_BUCKET_URL}/Codey01.jpg`} alt="Codey1" />
+        <ImageSub src={`${S3_BUCKET_URL}/SilentServer_v1.0.png`} alt="設計図" />
       </Slide>
       {/* スライド2 */}
       <Slide>
-      <ImageMain src={`${S3_BUCKET_URL}/WaterRipple.jpg`} alt="WaterRipple" />
-      <Subtitle>Enter the Silence</Subtitle>
+      <ImageMain src={`${S3_BUCKET_URL}/snow.jpg`} alt="snow" />
+      <Subtitle>Scraper Tool for Job Listings(v1.0)</Subtitle>
       <TechStack>
-        技術スタック：Python / Flask / Flask-CORS / AWS S3 / React / Heroku {"\n"}  
-        フルスタック構成 & クラウドデータ連携 / API設計（Blueprint使用） {"\n"}
+        技術スタック：Python / streamlit/streamlit Cloud{"\n"}  
       </TechStack>
       <TitleContainer>
-        <Gallery>Gallery</Gallery>
-        <In>in</In>
-        <The>the</The>
-        <Forest>Forest</Forest>
+        <Scrape>Scrape</Scrape>
+        <Bomb>Bomb v1.0</Bomb>
       </TitleContainer>
       <Description>
-          このシステムは、AWSからFlaskAPIを使用して{"\n"}
-          画像を取り込み、表示します。{"\n"}
-          ポートフォリオ、個人ホームページなど{"\n"}様々な用途で使用可能です。{"\n"}
+          このシステムは、クラウド対応で{"\n"}
+          ボタン一つでだれでも使用できる{"\n"}
+          求人情報等を自動収集できるツールです{"\n"}
       </Description>
-      <ImageSub src={`${S3_BUCKET_URL}/Codey01.jpg`} alt="Codey" />
+      <ImageSub src={`${S3_BUCKET_URL}/scrapebomb.png`} alt="ScrapeBomb紹介" />
     </Slide>
 
     {/* スライド3 */}
@@ -333,13 +323,11 @@ const Works = () => {
       </TitleContainer>
       <Description>
           - 次世代のタスク管理システム - {"\n"} 現在、開発タイムトライアル中！進捗：０％ {"\n"}
-          2025/2/15 開発スタート！{"\n"}リアルタイムで進捗公開予定！{"\n"}
-          詳細な設計 & 付箋設計はこちら↓　{"\n"} 
+          2025/4/1 開発スタート！{"\n"}
+          詳細な設計 はこちら→{"\n"} 
             rink {"\n"}
-          開発日記付き！{"\n"}（リアルタイムの開発の記録も公開！）{"\n"}
-          Coming Soon... 本番リリースまでお楽しみに！{"\n"}
       </Description>
-      <ImageSub src={`${S3_BUCKET_URL}/`} alt="" />
+      <ImageSub src={`${S3_BUCKET_URL}/coming_soon.png`} alt="coming soon" />
     </Slide>
 
     {/* スライド4 */}
@@ -359,9 +347,9 @@ const Works = () => {
       </TitleContainer>
       <Description>
           Gallery in the Forestの静的サイトバージョンです。{"\n"}
-          コンセプトは無料枠の限界を攻めるです。{"\n"}
+          個人サイトやLPなど様々な用途に使用可能です。{"\n"}
       </Description>
-      <ImageSub src={`${S3_BUCKET_URL}/Codey01.jpg`} alt="Codey4" />
+      <ImageSub src={`${S3_BUCKET_URL}/portfolio01_static_whole.jpg`} alt="設計図" />
     </Slide>
 
     {/* スライド5 */}
@@ -369,7 +357,7 @@ const Works = () => {
       <ImageMain src={`${S3_BUCKET_URL}/VividSunflowers.jpg`} alt="VividSunflowers" />
       <Subtitle>Carried in your bag,but not in your shadow.</Subtitle>
       <TechStack>
-          技術スタック：Python / SpeechRecognition / PyAudio /{"\n"} OpenAI API(GPT-4) / Google Cloud Speech-to-Text / gTTS / playsound{"\n"}  
+          技術スタック：Python / Svelte / Whisper　API /{"\n"} OpenAI API(GPT）/WebSocket/ CoquiTTS {"\n"}  
           音声認識 × AI会話 × 音声合成 を組み合わせたターミナル版アシスタント{"\n"}
       </TechStack>
       <TitleContainer>
@@ -377,11 +365,11 @@ const Works = () => {
       </TitleContainer>
       <Description>
           openaiAPI使用の会話型システムです。{"\n"}
-          デスクトップで会話ー＞ラズパイへの移行ー＞{"\n"}
+          デスクトップで会話→ラズパイへの移行→{"\n"}
           ぬいぐるみへの組み込みの順に進めていく{"\n"}プロジェクトです。{"\n"}
-          今回はデスクトップでの会話を実現しています。{"\n"}
+          今回はデスクトップでの英会話を実現しています。{"\n"}
       </Description>
-      <ImageSub src={`${S3_BUCKET_URL}/Codey01.jpg`} alt="Codey5" />
+      <ImageSub src={`${S3_BUCKET_URL}/Codey01_light_husen.png`} alt="Codey5" />
     </Slide>
   </WorksContainer>
   );

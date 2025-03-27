@@ -27,6 +27,7 @@ const Title = styled.h1`
   }
   @media (max-width: 768px) {
     font-size: 1.5rem;
+    top: -5%;
   }
 `;
 
@@ -45,9 +46,10 @@ const Form = styled.form`
     width: 45%;
   }
   @media (max-width: 768px) {
-    margin-top: -40%;
-    width: 80%;
-    margin-right: 15%;
+    margin-top: -60%;
+    width: 70%;
+    height: 40%;
+    margin-right: 25%;
     gap: 1rem;
   }
 `;
@@ -143,8 +145,8 @@ const CheckboxLabel = styled.p`
 
   @media (max-width: 768px) {
     position: absolute;
-    font-size: 1.2rem;
-    margin-top: -20%;
+    font-size: 1rem;
+    margin-top: -40%;
     left: 8%;
   }
 `;
@@ -153,6 +155,13 @@ const CheckboxContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    font-size: 1rem;
+    margin-top: -20%;
+    left: 8%;
+  }
 `;
 
 const Checkbox = styled.input`
@@ -174,13 +183,17 @@ const Notice = styled.p`
   font-size: 1rem;
   color: #ff5555; /* 目立つように赤 */
   opacity: 0.8;
-  margin-top: 10px;
+  margin-top: 20px;
+  text-aligin: center;
+
   @media (max-width: 1024px){
    font-size: 0.8 rem;    
     }
-@media (max-width: 768px){
-    font-size: 0.9rem; 
-    width: 110%;
+
+  @media (max-width: 768px){
+    font-size: 0.7rem; 
+    width: 90%;
+    margin: 20px auto 0;
     }
 
 `;
@@ -189,8 +202,7 @@ const Contact = () => {
   return (
     <ContactContainer>
       <Title>
-            <p>Contact</p> 
-             <p>sample</p>
+            <p>ContactSample</p> 
       </Title>
 
       {/* チェックボックスの説明と選択肢 */}
