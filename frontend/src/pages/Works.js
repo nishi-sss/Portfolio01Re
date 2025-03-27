@@ -32,6 +32,14 @@ const ImageMain = styled.img`
   position: absolute;
   left: 10%;
   filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 225)) blur(0.5px);
+  /* 👇 フェードインアニメーションを追加 */
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 
   @media (max-width: 1024px) { 
     width: 68%; /* タブレットで 1.2倍 */

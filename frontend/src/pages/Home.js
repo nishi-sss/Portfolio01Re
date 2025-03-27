@@ -111,6 +111,15 @@ const MainPhoto = styled.img`
   width: 100%;
   height: auto;
   display: block;
+
+   /* 👇 フェードインアニメーションを追加 */
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+    }
 `;
 
 const Home = () => {
