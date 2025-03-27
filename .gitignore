@@ -15,3 +15,6 @@ build/
 # OSやエディタの一時ファイル
 Thumbs.db
 .vscode/
+
+# 自分用メモ
+README_dev.md
